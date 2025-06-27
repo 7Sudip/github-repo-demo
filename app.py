@@ -2,7 +2,7 @@ import streamlit as st
 
 # --- Sidebar Navigation ---
 st.sidebar.title("Navigation")
-page = st.sidebar.radio("Go to", ["Home", "Course", "Contact", "About Us"])
+page = st.sidebar.radio("Go to", ["Home", "Course", "Contact", "About Us","Gallery"])
 
 
 # --- Home Page ---
@@ -61,6 +61,19 @@ elif page == "About Us":
 
     st.image("image.png", caption="Meet Our Team", use_column_width=True)
 
+# --- Gallery Page ---
+elif page == "Gallery":
+    st.title("🖼️ Gallery")
+    st.write("Enjoy a selection of random images showcased below:")
+
+    images = [
+        "1.jpg",
+        "2.jpg",
+        "3.jpg",
+        "4.webp"
+    ]
+    captions = ["Random Image 1", "Random Image 2", "Random Image 3", "Random Image 4"]
+    st.image(images, caption=captions, width=300)
 
 # --- Footer ---
 st.sidebar.markdown("---")
