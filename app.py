@@ -2,7 +2,8 @@ import streamlit as st
 
 # --- Sidebar Navigation ---
 st.sidebar.title("Navigation")
-page = st.sidebar.radio("Go to", ["Home", "Course", "Contact"])
+page = st.sidebar.radio("Go to", ["Home", "Course", "Contact", "About Us"])
+
 
 # --- Home Page ---
 if page == "Home":
@@ -42,6 +43,24 @@ elif page == "Contact":
         st.success(f"Thanks {name}! Your message has been sent.")
         st.write("We’ll get back to you at", email)
         # In a real app, you'd handle the form submission here.
+
+# --- About Us Page ---
+elif page == "About Us":
+    st.title("🙋‍♂️ About Us")
+    st.write("""
+        Welcome to our demo website!  
+        We are a small team passionate about **education**, **technology**, and making learning accessible for everyone.
+        
+        Our mission is to:
+        - Simplify complex topics with clear, hands-on courses.
+        - Empower beginners to build real-world skills.
+        - Foster a community of continuous learners.
+
+        Whether you're just getting started or looking to sharpen your skills, we’re here to help.
+    """)
+
+    st.image("image.png", caption="Meet Our Team", use_column_width=True)
+
 
 # --- Footer ---
 st.sidebar.markdown("---")
