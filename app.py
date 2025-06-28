@@ -59,7 +59,6 @@ elif page == "About Us":
         Whether you're just getting started or looking to sharpen your skills, we’re here to help.
     """)
 
-    st.image("image.png", caption="Meet Our Team", use_column_width=True)
 
 
 # --- Footer ---
