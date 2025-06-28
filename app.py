@@ -75,8 +75,6 @@ elif page == "Gallery":
     captions = ["Random Image 1", "Random Image 2", "Random Image 3", "Random Image 4"]
     st.image(images, caption=captions, width=300)
 
-# --- Footer ---
-st.sidebar.markdown("---")
-st.sidebar.write("© 2025 Demo Site")
+
 
 
