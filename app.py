@@ -1,5 +1,35 @@
 import streamlit as st
 
+# --- Simple Login Logic ---
+if "authenticated" not in st.session_state:
+    st.session_state.authenticated = False
+
+def login():
+    st.title("Login")
+    username = st.text_input("Username")
+    password = st.text_input("Password", type="password")
+    if st.button("Login"):
+        if username == "sudip" and password == "bohara123":
+            st.session_state.authenticated = True
+            st.success("Logged in successfully!")
+            st.rerun()
+        else:
+            st.error("Invalid credentials. Try again.")
+
+def logout():
+    st.session_state.authenticated = False
+    st.rerun()
+
+# --- Show login screen if not authenticated ---
+if not st.session_state.authenticated:
+    login()
+    st.stop() # stop rest of the app from running
+
+# --- Add logout button ---
+st.sidebar.markdown("---")
+st.sidebar.button("Logout", on_click=logout)
+
+
 # --- Sidebar Navigation ---
 st.sidebar.title("Navigation")
 page = st.sidebar.radio("Go to", ["Home", "Course", "Contact", "About Us","Gallery"])
