@@ -33,7 +33,7 @@ st.sidebar.button("Logout", on_click=logout)
 # --- Sidebar Navigation ---
 st.sidebar.title("Navigation")
 page = st.sidebar.radio("Go to", ["Home", "Course", "Contact", "About Us","Gallery",
-                                  "Products/Services","News/Blog"])
+                                  "Products/Services","News/Blog","Tech Reviews" ])
 
 
 # --- Home Page ---
@@ -172,6 +172,37 @@ elif page == "News/Blog":
         st.caption(blog["date"])
         st.write(blog["summary"])
         st.markdown("---")
+
+
+# ---- Tech Reviews -----
+elif page == "Tech Reviews":
+    st.title("💻 Tech Reviews")
+    st.write("Honest reviews of the latest tech gadgets and tools:")
+
+    reviews = [
+        {
+            "product": "AI Chatbot",
+            "rating": "⭐⭐⭐⭐½",
+            "review": "Blazing fast for data work and coding. Battery life is excellent.",
+            "image": "images/ai.webp"
+        },
+        {
+            "product": "Custom Web App",
+            "rating": "⭐⭐⭐⭐⭐",
+            "review": "One of the best productivity mice for developers and designers.",
+            "image": "images/website.jpg"
+        }
+    ]
+
+    for r in reviews:
+        cols = st.columns([1, 3])
+        with cols[0]:
+            st.image(r["image"], width=150)
+        with cols[1]:
+            st.markdown(f"### {r['product']}")
+            st.write(r["review"])
+            st.markdown(f"**Rating**: {r['rating']}")
+            st.markdown("---")
 
 
 
