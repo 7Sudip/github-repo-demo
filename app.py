@@ -279,5 +279,8 @@ elif page == "Deals/Discounts":
         st.caption(f"🕒 {deal['validity']}")
         st.button(f"Get Deal for {deal['course']}")
 
+# --- Footer ---
+st.markdown("---")
+st.write("© 2025 Demo Site")
 
 
