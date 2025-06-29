@@ -32,7 +32,7 @@ st.sidebar.button("Logout", on_click=logout)
 
 # --- Sidebar Navigation ---
 st.sidebar.title("Navigation")
-page = st.sidebar.radio("Go to", ["Home", "Course", "Contact", "About Us","Gallery"])
+page = st.sidebar.radio("Go to", ["Home", "Course", "Contact", "About Us","Gallery","Products/Services"])
 
 
 # --- Home Page ---
@@ -96,13 +96,55 @@ elif page == "Gallery":
     st.write("Enjoy a selection of random images showcased below:")
 
     images = [
-        "1.jpg",
-        "2.jpg",
-        "3.jpg",
-        "4.webp"
+        "images/1.jpg",
+        "images/2.jpg",
+        "images/3.jpg",
+        "images/4.webp"
     ]
     captions = ["Random Image 1", "Random Image 2", "Random Image 3", "Random Image 4"]
     st.image(images, caption=captions, width=300)
+
+# --- Products/Services Page ---
+elif page == "Products/Services":
+    st.title("🛍️ Products & Services")
+    st.write("Browse our tech products and services:")
+
+    products = [
+        {
+            "name": "AI Chatbot",
+            "description": "Smart virtual assistant for your website.",
+            "price": "$199",
+            "image": "images/ai.webp"
+        },
+        {
+            "name": "Custom Web App",
+            "description": "We build web apps with Python, Streamlit & Flask.",
+            "price": "Starting at $499",
+            "image": "images/website.jpg"
+        },
+        {
+            "name": "Data Analysis Service",
+            "description": "Visual reports + insights from your data.",
+            "price": "$149",
+            "image": "images/data_analysis.png"
+        },
+        {
+            "name": "1-on-1 Mentorship",
+            "description": "Get private training in coding & projects.",
+            "price": "$39/hr",
+            "image": "images/all-in-one.jpg"
+        }
+    ]
+
+    for p in products:
+        cols = st.columns([1, 3])
+        with cols[0]:
+            st.image(p["image"], width=140)
+        with cols[1]:
+            st.markdown(f"### {p['name']}")
+            st.write(p["description"])
+            st.markdown(f"**Price**: {p['price']}")
+            st.button(f"Inquire about {p['name']}")
 
 
 
