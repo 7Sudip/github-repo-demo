@@ -210,7 +210,6 @@ elif page == "News/Blog":
         st.write(blog["summary"])
         st.markdown("---")
 
-
 # ---- Tech Reviews -----
 elif page == "Tech Reviews":
     st.title("💻 Tech Reviews")
@@ -282,5 +281,6 @@ elif page == "Deals/Discounts":
 # --- Footer ---
 st.markdown("---")
 st.write("© 2025 Demo Site")
+
 
 
