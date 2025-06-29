@@ -204,7 +204,9 @@ elif page == "Tech Reviews":
             st.markdown(f"**Rating**: {r['rating']}")
             st.markdown("---")
 
-
+# --- Footer ---
+st.markdown("---")
+st.write("© 2025 Demo Site")
 
 
 
