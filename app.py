@@ -32,7 +32,8 @@ st.sidebar.button("Logout", on_click=logout)
 
 # --- Sidebar Navigation ---
 st.sidebar.title("Navigation")
-page = st.sidebar.radio("Go to", ["Home", "Course", "Contact", "About Us","Gallery","Products/Services"])
+page = st.sidebar.radio("Go to", ["Home", "Course", "Contact", "About Us","Gallery",
+                                  "Products/Services","News/Blog"])
 
 
 # --- Home Page ---
@@ -145,6 +146,33 @@ elif page == "Products/Services":
             st.write(p["description"])
             st.markdown(f"**Price**: {p['price']}")
             st.button(f"Inquire about {p['name']}")
+
+# ----- News/Blog ---- 
+elif page == "News/Blog":
+    st.title("📰 Tech News / Blog")
+    st.write("Check out our latest articles and updates from the tech world!")
+
+    blogs = [
+        {
+            "title": "AI is Changing the World",
+            "date": "June 25, 2025",
+            "summary": "Discover how AI is transforming industries and jobs.",
+            "image": "images/ai-img.jpeg"
+        },
+        {
+            "title": "Why Learn Python in 2025?",
+            "date": "June 20, 2025",
+            "summary": "Python continues to lead in automation, data, and AI.",
+            "image": "images/python-ai.webp"
+        }
+    ]
+    for blog in blogs:
+        st.image(blog["image"], use_column_width=True)
+        st.markdown(f"### {blog['title']}")
+        st.caption(blog["date"])
+        st.write(blog["summary"])
+        st.markdown("---")
+
 
 
 
