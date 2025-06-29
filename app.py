@@ -33,7 +33,7 @@ st.sidebar.button("Logout", on_click=logout)
 # --- Sidebar Navigation ---
 st.sidebar.title("Navigation")
 page = st.sidebar.radio("Go to", ["Home", "Course", "Contact", "About Us","Gallery",
-                                  "Products/Services","News/Blog","Tech Reviews" ])
+                                  "Products/Services","News/Blog","Tech Reviews","Deals/Discounts"])
 
 
 # --- Home Page ---
@@ -204,9 +204,44 @@ elif page == "Tech Reviews":
             st.markdown(f"**Rating**: {r['rating']}")
             st.markdown("---")
 
-# --- Footer ---
-st.markdown("---")
-st.write("© 2025 Demo Site")
+# ---- Deals/Discounts ----
+elif page == "Deals/Discounts":
+    st.title("💸 Deals & Discounts on Courses")
+    st.subheader("🔥 Limited Time Offers on Popular Courses")
+
+    deals = [
+        {
+            "course": "Python 101",
+            "original_price": "$99",
+            "discounted_price": "$49",
+            "validity": "Valid till June 30, 2025",
+            "image": "images/python-ai.webp"
+        },
+        {
+            "course": "Data Science Basics",
+            "original_price": "$149",
+            "discounted_price": "$89",
+            "validity": "Valid till July 5, 2025",
+            "image": "images/data-science.jpg"
+        },
+        {
+            "course": "Streamlit Web App",
+            "original_price": "$129",
+            "discounted_price": "$69",
+            "validity": "Valid till July 10, 2025",
+            "image": "images/striamlit.png"
+        }
+    ]
+
+    for deal in deals:
+        st.markdown("----")
+        st.image(deal["image"], width=400)
+        st.markdown(f"### {deal['course']}")
+        st.markdown(f"💲 Original: ~~{deal['original_price']}~~")
+        st.markdown(f"✅ Now: **{deal['discounted_price']}**")
+        st.caption(f"🕒 {deal['validity']}")
+        st.button(f"Get Deal for {deal['course']}")
+
 
 
 
